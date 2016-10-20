@@ -24,6 +24,7 @@ def client_thred(conn, ip):
        
 
 def server_loop():
+    print('SERVER START')
     while True:
         conn, addr = s.accept()
         Thread(target=client_thred, args=(conn, addr[0]), daemon=True).start()
