@@ -16,7 +16,11 @@ def client_thred(conn, ip):
         break
        data = data.decode('utf-8')
        print(ip + ' SENT "' + data + '"')
-       conn.send(str('OK').encode())
+       if data == 'b2ba9d4':
+        response = str('OK').encode()
+       else:
+        response = str('NO').encode()
+       conn.send(response)
        
 
 def server_loop():
