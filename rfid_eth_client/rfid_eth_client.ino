@@ -49,10 +49,12 @@ bool sendToServer(String msg)
 
 void acceptCard()
 {
+  Serial.println("ACCEPT CARD EVENT");
 }
 
 void rejectCard()
 {
+  Serial.println("REJECT CARD EVENT");
 }
 
 void setup() {
@@ -80,6 +82,7 @@ void loop()
   }
   
   String uid = readCardUID();
+  Serial.print("CARD READ ");
   Serial.println(uid);
   if(sendToServer(uid))
   {
